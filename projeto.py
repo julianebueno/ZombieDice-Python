@@ -2,22 +2,24 @@ from random import shuffle, choice
 from time import sleep
 import os
 
-# ---------------------------------------------------------------------------------------------Funções-----
-def criar_tubo():  # ----------------------------------------------------Tubo original com os 13 dados-----
+# ======================================================================================================= #
+#   Funções                                                                                               #
+# ======================================================================================================= #
+def criar_tubo():  # ----------------------------------------------------Tubo original com os 13 dados---
     tubo_f = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde',
               'amarelo', 'amarelo', 'amarelo', 'amarelo',
               'vermelho', 'vermelho', 'vermelho']
     return tubo_f
 
 
-def definir_faces():  # ---------------------------------------------Faces conforme as cores dos dados-----
+def definir_faces():  # ---------------------------------------------Faces conforme as cores dos dados---
     verde = ('cérebro', 'cérebro', 'cérebro', 'passos', 'passos', 'tiro')
     amare = ('cérebro', 'cérebro', 'passos', 'passos', 'tiro', 'tiro')
     verme = ('cérebro', 'passos', 'passos', 'tiro', 'tiro', 'tiro')
     return verde, amare, verme
 
 
-def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, e aleatoriando a ordem-----
+def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, e aleatoriando a ordem---
     lista_nomes = []  # Uma lista para armazenar os jogadores
     qnt_jgdr = int(input('Quantos jogadores nessa partida? '))
     if qnt_jgdr < 2:  # encerrando se não tiver no minino 2 jogadores
@@ -33,7 +35,7 @@ def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, 
     return lista_nomes, qnt_jgdr
 
 
-def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogando os dados disponiveis-----
+def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogando os dados disponiveis---
     dado = choice(tubo_atual)
     if dado == 'verde':
         face = choice(d_verde)  # dado verde
@@ -44,7 +46,7 @@ def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogand
     return dado, face
 
 
-def contar_pontos(dados_round, faces_round):  # --------------------------Salvando os pontos da rodada-----
+def contar_pontos(dados_round, faces_round):  # --------------------------Salvando os pontos da rodada---
     dado_remover = []
     c = int(0)
     p = int(0)
@@ -61,7 +63,7 @@ def contar_pontos(dados_round, faces_round):  # --------------------------Salvan
     return c, p, t, dado_remover
 
 
-def mostrar_pontos(c, p, t, nome):  # ------------------------------------------------Mostrando pontos-----
+def mostrar_pontos(c, p, t, nome):  # ------------------------------------------------Mostrando pontos---
     print('- ' * 20, f'\n- Pontuação atual : {nome:10}')
     print(f'{"Cérebro":^10}|{"Passos":^10}|{"Tiros":^10}')
     print(f'{c:^10}|{p:^10}|{t:^10}')
@@ -73,40 +75,41 @@ def continuar_jogando():
     return op
 
 
-def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------Retirando dados do tubo-----
+def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------Retirando dados do tubo---
     print(f'Retirando {len(dado_tirar)}: {dado_tirar} \nDo tubo {len(tub)} {tub}')
 
     for a in range(len(dado_tirar)):
         tub.pop(dado_tirar(a))
-    print(f' Tub {tub}')
+    print(f' Tub {tub}') 
     return tub
 
 
-def verificar_ganhador(cer):  # --------------------------------------------Verificando se há ganhador-----
+def verificar_ganhador(cer):  # --------------------------------------------Verificando se há ganhador---
     if cer >= 13:
         return True
     else:
         pass
 
 
-def verificar_perdedor(tir):  # --------------------------------------------Verificando se há perdedor-----
+def verificar_perdedor(tir):  # --------------------------------------------Verificando se há perdedor---
     if tir >= 3:
         return True
     else:
         pass
 
 
-# ====================================================================================Inicio do código=====
-os.system('cls')
-print('= ' * 6, 'Zombie Dice ', '= ' * 6)
-tubo = []
+# ======================================================================================================= #
+#   Inicio do código                                                                                      #
+# ======================================================================================================= #
+tubo = []  # -------------------------------------------------------------Declarando as variáveis locais---
 dado_retirar = []
 dados_rodada = []
 faces_rodada = []
+pontos_c = []  # Lista para armazenar a pontuação de cérebros dos jogadores
+nomes_jogadores: list[str] # Lista para armazenar o nome dos jogadores
 
-pontos_c = []  # Uma lista para armazenar a pontuação dos jogadores
-
-nomes_jogadores: list[str]
+os.system('cls') # ---------------------------------------------------Limpa tela e "começo" da interface---
+print('= ' * 6, 'Zombie Dice ', '= ' * 6) # Cabeçalho
 nomes_jogadores, quantia_jogadores = coletar_jogadores()
 
 if quantia_jogadores < 2:
