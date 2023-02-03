@@ -1,4 +1,6 @@
 from random import shuffle, choice
+from time import sleep
+import os
 
 # ---------------------------------------------------------------------------------------------Funções-----
 def criar_tubo():  # ----------------------------------------------------Tubo original com os 13 dados-----
@@ -94,7 +96,8 @@ def verificar_perdedor(tir):  # --------------------------------------------Veri
         pass
 
 
-# ------------------------------------------------------------------------------------Inicio do código-----
+# ====================================================================================Inicio do código=====
+os.system('cls')
 print('= ' * 6, 'Zombie Dice ', '= ' * 6)
 tubo = []
 dado_retirar = []
@@ -149,4 +152,4 @@ else:
 
 
 
-print('Jogo encerrado')
+print('\n\nJogo encerrado\n\n\n\n')
