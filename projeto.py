@@ -1,7 +1,6 @@
 from random import shuffle, choice
 from time import sleep
 import os
-
 # ======================================================================================================= #
 #   Funções                                                                                               #
 # ======================================================================================================= #
@@ -11,17 +10,15 @@ def criar_tubo():  # ----------------------------------------------------Tubo or
               'vermelho', 'vermelho', 'vermelho']
     return tubo_f
 
-
 def definir_faces():  # ---------------------------------------------Faces conforme as cores dos dados---
     verde = ('cérebro', 'cérebro', 'cérebro', 'passos', 'passos', 'tiro')
     amare = ('cérebro', 'cérebro', 'passos', 'passos', 'tiro', 'tiro')
     verme = ('cérebro', 'passos', 'passos', 'tiro', 'tiro', 'tiro')
     return verde, amare, verme
 
-
 def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, e aleatoriando a ordem---
     lista_nomes = []  # Uma lista para armazenar os jogadores
-    qnt_jgdr = int(input('Quantos jogadores nessa partida? '))
+    qnt_jgdr = int(input('Quantos jogadores nessa partida?\n  '))
     if qnt_jgdr < 2:  # encerrando se não tiver no minino 2 jogadores
         pass
     else:
@@ -34,7 +31,6 @@ def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, 
             print(f'{a + 1}: {lista_nomes[a]}')
     return lista_nomes, qnt_jgdr
 
-
 def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogando os dados disponiveis---
     dado = choice(tubo_atual)
     if dado == 'verde':
@@ -44,7 +40,6 @@ def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogand
     else:
         face = choice(d_verme)  # dado vermelho
     return dado, face
-
 
 def contar_pontos(dados_round, faces_round):  # --------------------------Salvando os pontos da rodada---
     dado_remover = []
@@ -62,18 +57,11 @@ def contar_pontos(dados_round, faces_round):  # --------------------------Salvan
             p = p + 1
     return c, p, t, dado_remover
 
-
 def mostrar_pontos(c, p, t, nome):  # ------------------------------------------------Mostrando pontos---
-    print('- ' * 20, f'\n- Pontuação atual : {nome:10}')
+    print('*' * 5, f'Pontuação atual de {nome:10}')
     print(f'{"Cérebro":^10}|{"Passos":^10}|{"Tiros":^10}')
     print(f'{c:^10}|{p:^10}|{t:^10}')
-    print('- ' * 20)
-
-
-def continuar_jogando():
-    op = input('Continuar jogando os dados? s/n  ')
-    return op
-
+    print('*' * 38, '\n\n')
 
 def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------Retirando dados do tubo---
     print(f'Retirando {len(dado_tirar)}: {dado_tirar} \nDo tubo {len(tub)} {tub}')
@@ -83,20 +71,17 @@ def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------R
     print(f' Tub {tub}') 
     return tub
 
-
 def verificar_ganhador(cer):  # --------------------------------------------Verificando se há ganhador---
     if cer >= 13:
         return True
     else:
         pass
 
-
 def verificar_perdedor(tir):  # --------------------------------------------Verificando se há perdedor---
     if tir >= 3:
         return True
     else:
         pass
-
 
 # ======================================================================================================= #
 #   Inicio do código                                                                                      #
@@ -109,50 +94,51 @@ pontos_c = []  # Lista para armazenar a pontuação de cérebros dos jogadores
 nomes_jogadores: list[str] # Lista para armazenar o nome dos jogadores
 
 os.system('cls') # ---------------------------------------------------Limpa tela e "começo" da interface---
-print('= ' * 6, 'Zombie Dice ', '= ' * 6) # Cabeçalho
-nomes_jogadores, quantia_jogadores = coletar_jogadores()
+print('*' * 5, 'Zombie Dice', '*' * 20, '\n') # Cabeçalho
+nomes_jogadores, quantia_jogadores = coletar_jogadores() # Coletando e sorteando a ordem dos jogadores
+print('*' * 38) # Divisória
 
 if quantia_jogadores < 2:
     print('Precisa de 2 ou mais jogadores')
 else:
+    sleep(5) #Espera 5 segundos
+    os.system('cls')
+
     fim = False
-    while not fim:
+    while fim == False:
         for i in range(quantia_jogadores):
             tubo = criar_tubo()
             verd, amar, verm = definir_faces()
-            print(f'\n- - - Vez de {nomes_jogadores[i]} - - -')
-
             vez = 's'
-            while vez == 's':
+            while vez == 's':    
+                print('*' * 5, f'Vez de {nomes_jogadores[i]}')
                 dado_retirar.clear()
-                print(f'\nDados no tubo: {len(tubo)}\n{tubo}\n')
+                dados_rodada.clear()
+                faces_rodada.clear()
+                print(f'Dados no tubo: {len(tubo)} : {tubo}')
                 for j in range(3):
                     dado_sorteado, face_sorteada = jogar_dados(tubo, verd, amar, verm)
                     print(f'dado {j + 1}: Cor {dado_sorteado} na face {face_sorteada}')
                     dados_rodada.append(dado_sorteado)
                     faces_rodada.append(face_sorteada)
+                print(f'Dados e faces sorteadas: {dados_rodada} : {faces_rodada}')
+
                 ce, pa, ti, dado_retirar = contar_pontos(dados_rodada, faces_rodada)
                 mostrar_pontos(ce, pa, ti, nomes_jogadores[i])
-                print(f'Dados a ser retirado do tubo: \n{dado_retirar}')
-    # -----------------------------------------------------------------------------------Até aki ok
+                print(f'Dados a ser retirado do tubo: {dado_retirar}')
+                print('\n')
+                vez = input('Continuar jogando os dados? s/n  ')
+                sleep (3)
+                print('*' * 38) # Divisória
+            print('*' * 5, f'{nomes_jogadores[i]} passou a vez')
+   
 
 
-                #retirar_dados_do_tubo(dado_retirar, tubo)
-                vez = continuar_jogando()
+print('*' * 5, 'Jogo encerrado', '*' * 17, '\n\n') 
 
-                pontos_c.append(1)
-
-                x = verificar_ganhador(pontos_c[i])
-                y = verificar_perdedor(ti)
-
-                if x:
-                    print(f'\n- Jogador: {nomes_jogadores[i]} ganhou!! -')
-                    break
-
-                if y:
-                    print(f'\n- Jogador: {nomes_jogadores[i]} perdeu!! -')
-                    break
-
-
-
-print('\n\nJogo encerrado\n\n\n\n')
+#                retirar_dados_do_tubo(dado_retirar, tubo)
+#                
+#                pontos_c.append(1)
+#
+#                x = verificar_ganhador(pontos_c[i])
+#                y = verificar_perdedor(ti)
