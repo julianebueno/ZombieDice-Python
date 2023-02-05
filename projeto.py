@@ -71,17 +71,14 @@ def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------R
     print(f' Tub {tub}') 
     return tub
 
-def verificar_ganhador(cer):  # --------------------------------------------Verificando se há ganhador---
+def verificar_pontos(cer,tir):  # -----------------------------------------------Verificando os pontos---
     if cer >= 13:
+        return True
+    elif tir >= 3:
         return True
     else:
         pass
 
-def verificar_perdedor(tir):  # --------------------------------------------Verificando se há perdedor---
-    if tir >= 3:
-        return True
-    else:
-        pass
 
 # ======================================================================================================= #
 #   Inicio do código                                                                                      #
