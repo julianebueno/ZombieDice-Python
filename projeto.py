@@ -61,13 +61,14 @@ def mostrar_pontos(c, p, t, nome):  # ------------------------------------------
     print('*' * 5, f'Pontuação atual de {nome:10}')
     print(f'{"Cérebro":^10}|{"Passos":^10}|{"Tiros":^10}')
     print(f'{c:^10}|{p:^10}|{t:^10}')
-    print('*' * 38, '\n\n')
+    print('*' * 38, '\n')
 
 def retirar_dados_do_tubo(dado_tirar, tub):  # --------------------------------Retirando dados do tubo---
-    print(f'Retirando {len(dado_tirar)}: {dado_tirar} \nDo tubo {len(tub)} {tub}')
-
-    for a in range(len(dado_tirar)):
-        tub.pop(dado_tirar(a))
+    print(f'Retirando {len(dado_tirar)} dados: {dado_tirar} : do tubo {len(tub)} {tub}')
+    i = len(dado_tirar)
+    for a in range(i):
+        x = dado_tirar(a)
+        tub.pop(x)
     print(f' Tub {tub}') 
     return tub
 
@@ -123,6 +124,8 @@ else:
                 ce, pa, ti, dado_retirar = contar_pontos(dados_rodada, faces_rodada)
                 mostrar_pontos(ce, pa, ti, nomes_jogadores[i])
                 print(f'Dados a ser retirado do tubo: {dado_retirar}')
+                tubo = retirar_dados_do_tubo(dado_retirar, tubo)
+                print(f'Dados no tubo: {len(tubo)} : {tubo}')
                 print('\n')
                 vez = input('Continuar jogando os dados? s/n  ')
                 sleep (3)
