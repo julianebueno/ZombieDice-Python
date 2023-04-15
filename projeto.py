@@ -135,6 +135,7 @@ else:
 
 
 print('*' * 5, 'Jogo encerrado', '*' * 17, '\n\n') 
+sleep (5)
 
 #                retirar_dados_do_tubo(dado_retirar, tubo)
 #                
