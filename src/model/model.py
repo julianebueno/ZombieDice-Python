@@ -26,6 +26,21 @@ class Modelos():
         return lista_jogadores
 
 
+    def criar_dados():  # Tubo original com os 13 dados
+        dados = [
+            '⬜', '⬜', '⬜', '⬜', '⬜', '⬜',
+            '🟨', '🟨', '🟨', '🟨', 
+            '🟦', '🟦', '🟦']
+        return dados
+
+
+    def definir_faces():  # Faces conforme as cores dos dados
+        faces = {
+            '⬜': ['🧠', '🧠', '🧠', '👣', '👣', '🔫'],
+            '🟨': ['🧠', '🧠', '👣', '👣', '🔫', '🔫'],
+            '🟦': ['🧠', '👣', '👣', '🔫', '🔫', '🔫']
+        }
+        return faces
 
 
 
@@ -36,15 +51,6 @@ class Modelos():
 
 
 
-    def criar_tubo():  # ----------------------------------------------------Tubo original com os 13 dados---
-        tubo_f = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo', 'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho']
-        return tubo_f
-
-    def definir_faces():  # ---------------------------------------------Faces conforme as cores dos dados---
-        verde = ('cérebro', 'cérebro', 'cérebro', 'passos', 'passos', 'tiro')
-        amare = ('cérebro', 'cérebro', 'passos', 'passos', 'tiro', 'tiro')
-        verme = ('cérebro', 'passos', 'passos', 'tiro', 'tiro', 'tiro')
-        return verde, amare, verme
 
 
 

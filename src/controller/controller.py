@@ -3,7 +3,7 @@ from src.view.view import View
 from time import sleep
 
 class Jogo():
-    
+
     def apresenta():
         View.saudacao()
         # mostrar as regras depois
@@ -21,12 +21,21 @@ class Jogo():
             print("\nAn exception occurred:", error)
 
 
-    # def define_tubo_dados(): # criar o tubo com os dados
-    #     try:
-            
-    #         return tubo_dados
-    #     except Exception as error:
-    #         print("\nAn exception occurred:", error)
+    def define_tubo_dados(): # criar o tubo com os dados
+
+        try:
+            dados_cores = list[str]
+            dados_cores = Modelos.criar_dados()
+            dados_faces = list[str]
+            dados_faces = Modelos.definir_faces()
+            tubo = [dados_cores, dados_faces]
+            return tubo
+        except Exception as error:
+            print("\nAn exception occurred:", error)
+
+
+
+
 
 
         # jogar enquanto não houver vencedor
