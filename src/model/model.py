@@ -1,6 +1,41 @@
 from random import shuffle, choice
+from src.view.view import View
 
 class Modelos():
+
+    def coletar_jogadores():
+
+        quantia_jogadores = int(input('\nQuantos jogadores nessa partida?\n   '))
+
+        if quantia_jogadores < 2:
+            raise Exception("Precisa de 2 ou mais jogadores")
+        
+        lista_jogadores = []
+
+        print('')
+        for a in range(quantia_jogadores):
+            nome = str(input(f'Nome do jogador {a + 1}: '))
+            lista_jogadores.append(nome)
+
+        return lista_jogadores
+    
+
+    def sortear_ordem_jogadores(lista_jogadores):
+        View.embaralhando_jogadores()
+        shuffle(lista_jogadores)
+        return lista_jogadores
+
+
+
+
+
+
+
+
+
+
+
+
     def criar_tubo():  # ----------------------------------------------------Tubo original com os 13 dados---
         tubo_f = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo', 'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho']
         return tubo_f
@@ -12,21 +47,6 @@ class Modelos():
         return verde, amare, verme
 
 
-    def coletar_jogadores():  # ------------Coleta da quantia e nome dos jogadores, e aleatoriando a ordem---
-        lista_nomes = []  # Uma lista para armazenar os jogadores
-        qnt_jgdr = int(input('Quantos jogadores nessa partida?\n  '))
-        if qnt_jgdr < 2:  # encerrando se não tiver no minino 2 jogadores
-            print('Precisa de 2 ou mais jogadores')
-            pass
-        else:
-            for a in range(qnt_jgdr):
-                nome = str(input(f'Digite o nome do jogador {a + 1}:'))
-                lista_nomes.append(nome)
-            shuffle(lista_nomes)
-            print('\nOrdem dos jogadores:')
-            for a in range(qnt_jgdr):
-                print(f'{a + 1}: {lista_nomes[a]}')
-        return lista_nomes, qnt_jgdr
 
     def jogar_dados(tubo_atual, d_verde, d_amare, d_verme):  # ---------------Jogando os dados disponiveis---
         dado = choice(tubo_atual)
