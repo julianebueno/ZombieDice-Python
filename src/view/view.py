@@ -4,7 +4,7 @@ class View():
         print('\n\n')
         print('-' * 40)
         print('-')
-        print('-', '  Zombie Dice 🧠')
+        print('-', '  Zombie Dice 🧠 🎲')
         print('-')
         print('-' * 40)
 
@@ -15,6 +15,7 @@ class View():
     def mostrar_ordem_jogadores(jogadores):
         print('')
         print('Ordem dos jogadores:')
+        print('')
         for jogador in jogadores:
             print('- ', jogador['nome'])
 
@@ -22,9 +23,23 @@ class View():
         print('')
         print('-' * 40)
         print('-')
-        print('-', f'Atenção!! Vez de: ', jogador['nome'])
+        print('-', f' Atenção!! Vez de: ', jogador['nome'])
         print('-')
         print('-' * 40)
+
+    def mostrar_resultado_jogada(rodada, tiros, cerebros):
+        print('')
+        print('.  Resultado da jogada: ') 
+        print('.')
+        for i in range(3):
+            print(f'.  Dado: {rodada[i][0]} - Face: {rodada[i][1]}')
+        print('.')
+        print('. ⚠️  - Tiros: ', tiros.count('🔫'), 'x 🔫') 
+        print('. ⚠️  - Cerebros: ', cerebros.count('🧠'), 'x 🧠') 
+
+    def mostrar_msg_passa_vez(jogador):
+        print('')
+        print(' ❕ ', jogador['nome'], ' passou a vez ❕')
 
     def mostrar_msg_perda(jogador):
         print('')
@@ -33,30 +48,16 @@ class View():
     def mostrar_msg_vencedor(jogador):
         print('')
         print('-' * 40)
-        print('-')
-        print('-', f'Parabéns!! ', jogador['nome'], ' ganhou o jogo!!')
-        print('-')
+        print('- 🏆')
+        print('- 🏆 ', 'Parabéns ', jogador['nome'],'!!')
+        print('- 🏆  Você ganhou o jogo!!')
+        print('- 🏆')
         print('-' * 40)
-
-
-
-
-    def mostrar_pontos(c, p, t, nome):  # ------------------------------------------------Mostrando pontos---
-        print('\n\n','*' * 5, f'Pontuação atual de {nome:10}')
-        print(f'{"Cérebro":^10}|{"Passos":^10}|{"Tiros":^10}')
-        print(f'{c:^10}|{p:^10}|{t:^10}')
-        pass
-
-
-
-
-
-
 
     def encerramento_jogo():
         print('')
         print('-' * 40)
         print('-')
-        print('-', '  Jogo Encerrado')
+        print('-', ' ☠️   Jogo Encerrado')
         print('-')
         print('-' * 40)
