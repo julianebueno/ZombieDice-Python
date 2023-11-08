@@ -23,7 +23,7 @@ As faces significam:
 - 👣 – Sua vítima escapou. Sempre retorna para ser jogado novamente
 - 🔫 – Sua vítima revidou. Se juntar 3 no turno, perde a vez ☠️
 
-Em cada rodada, 3 dados são sortidos e rolados, e o resultado é computado e o jogador escolhe em contiunar ou passar a vez
+Em cada rodada, 3 dados são sortidos e rolados, e o resultado é computado e o jogador escolhe em continuar ou passar a vez
 
 Jogue até alguém chegar a 13 Cérebros 🏆
 
@@ -38,7 +38,7 @@ git clone https://github.com/julianebueno/ZombieDice-Python.git
 
 Entre na pasta do Jogo
 ```
-cd ZombieDice-Python/
+cd ZombieDice-Python
 ```
 
 Rode o Jogo
