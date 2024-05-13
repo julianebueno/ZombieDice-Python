@@ -8,8 +8,9 @@ class Modelos():
             else:
                 quantia_jogadores = int(quantia_jogadores)  
                 if quantia_jogadores < 2:
-                    print('')
-                    print('Precisa de 2 ou mais jogadores')
+                    print('\nPrecisa de 2 ou mais jogadores')
+                elif quantia_jogadores > 10:
+                    print('\nMáximo de 10 jogadores')
                 else:
                     break
         print('')
