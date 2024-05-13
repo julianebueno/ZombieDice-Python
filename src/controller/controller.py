@@ -38,22 +38,22 @@ class Jogo():
         return [dado_sorteado,face_sorteada]
     
     def salvar_cerebros(resultado, pontos): # salvando os pontos da rodada
-        if resultado[1] == '🧠':
+        if resultado[1] == 'cerebro':
             pontos.append(resultado[1])
         return pontos
     
     def contar_tiros_rodada(resultado, tiros_rodada): # salvando os pontos da rodada
-        if resultado[1] == '🔫':
+        if resultado[1] == 'tiro':
             tiros_rodada.append(resultado[1])
         return tiros_rodada
     
     def retirar_dados_jogada(resultado, dados):
-        if resultado[1] != '👣':
+        if resultado[1] != 'passos':
             dados.remove(resultado[0])
         return dados
 
     def retornar_dados_jogada(resultado, dados):
-        if resultado[1] != '🧠':
+        if resultado[1] != 'cerebro':
             dados.append(resultado[0])
         return dados
 
@@ -84,13 +84,13 @@ class Jogo():
                         Jogo.contar_tiros_rodada(rodada[i], tiros_rodada)
                     View.mostrar_resultado_jogada(rodada, tiros_rodada, jogador['pontos'])
                     
-                    encerra_rodada = tiros_rodada.count('🔫') > 2
+                    encerra_rodada = tiros_rodada.count('tiro') > 2
                     if encerra_rodada:
                         View.mostrar_msg_perda(jogador)
                         time.sleep(1)
                         break
 
-                    encerra_rodada = jogador['pontos'].count('🧠') > 12
+                    encerra_rodada = jogador['pontos'].count('cerebro') > 12
                     if encerra_rodada:
                         vencedor = True
                         View.mostrar_msg_vencedor(jogador) # mostrar vencedor

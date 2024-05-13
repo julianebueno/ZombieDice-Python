@@ -14,14 +14,14 @@ Cada dado representa uma pobre vítima a ser atacada
 
 O jogo tem 13 dados, cada um tem uma cor, cada cor tem uma configuração de faces, sendo:
 
-- 6🟩: 3🧠 2👣 1🔫
-- 4🟨: 2🧠 2👣 2🔫
-- 3🟥: 1🧠 2👣 3🔫
+- 6 verde: 3 cerebro, 2 passos e 1 tiro
+- 4 amarelo: 2 cerebro, 2 passos e 2 tiro
+- 3 vermelho: 1 cerebro, 2 passos e 3 tiro
 
 As faces significam:
-- 🧠 – Você devorou o cérebro de sua vítima. Ganha ponto e o dado fica preso durante o turno do jogador
-- 👣 – Sua vítima escapou. Sempre retorna para ser jogado novamente
-- 🔫 – Sua vítima revidou. Se juntar 3 no turno, perde a vez ☠️
+- cerebro – Você devorou o cérebro de sua vítima. Ganha ponto e o dado fica preso durante o turno do jogador
+- passos – Sua vítima escapou. Sempre retorna para ser jogado novamente
+- tiro – Sua vítima revidou. Se juntar 3 no turno, perde a vez ☠️
 
 Em cada rodada, 3 dados são sortidos e rolados, e o resultado é computado e o jogador escolhe em continuar ou passar a vez
 

@@ -34,8 +34,8 @@ class View():
         for i in range(3):
             print(f'.  Dado: {rodada[i][0]} - Face: {rodada[i][1]}')
         print('.')
-        print('. ⚠️  - Tiros: ', tiros.count('🔫'), 'x 🔫') 
-        print('. ⚠️  - Cerebros: ', cerebros.count('🧠'), 'x 🧠') 
+        print('. ⚠️  - Tiros: ', tiros.count('tiro'), 'x tiro') 
+        print('. ⚠️  - Cerebros: ', cerebros.count('cerebro'), 'x cerebro') 
 
     def mostrar_msg_passa_vez(jogador):
         print('')

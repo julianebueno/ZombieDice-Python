@@ -22,15 +22,15 @@ class Modelos():
     
     def definir_dados():  # Tubo original com os 13 dados
         dados = [
-            '⬜', '⬜', '⬜', '⬜', '⬜', '⬜',
-            '🟨', '🟨', '🟨', '🟨', 
-            '🟦', '🟦', '🟦']
+            'verde', 'verde', 'verde', 'verde', 'verde', 'verde',
+            'amarelo', 'amarelo', 'amarelo', 'amarelo', 
+            'vermelho', 'vermelho', 'vermelho']
         return dados
 
     def definir_faces():  # Faces conforme as cores dos dados
         faces = {
-            '⬜': ['🧠', '🧠', '🧠', '👣', '👣', '🔫'],
-            '🟨': ['🧠', '🧠', '👣', '👣', '🔫', '🔫'],
-            '🟦': ['🧠', '👣', '👣', '🔫', '🔫', '🔫']
+            'verde': ['cerebro', 'cerebro', 'cerebro', 'passos', 'passos', 'tiro'],
+            'amarelo': ['cerebro', 'cerebro', 'passos', 'passos', 'tiro', 'tiro'],
+            'vermelho': ['cerebro', 'passos', 'passos', 'tiro', 'tiro', 'tiro']
         }
         return faces
