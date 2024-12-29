@@ -5,6 +5,7 @@
 ### Índice
 - [Como jogar](#como-jogar)
 - [Instalação](#instalação)
+- [Screenshots](#)
 
 ## Como jogar
 
@@ -29,9 +30,9 @@ Jogue até alguém chegar a 13 Cérebros 🏆
 
 ## Instalação
 
-Baixe instale o [Python](https://www.python.org/downloads/)
+Baixe e instale o [Python](https://www.python.org/downloads/)
 
-Clone o projeto no terminal com o git
+Clone o projeto no terminal com o [git](https://git-scm.com/) (ou [baixe em .zip](https://github.com/julianebueno/ZombieDice-Python/archive/refs/heads/main.zip), descompacte e abra no terminal)
 ```
 git clone https://github.com/julianebueno/ZombieDice-Python.git
 ```
@@ -45,5 +46,28 @@ Rode o Jogo
 ```
 python ./app.py
 ```
+
+## Screenshots
+
+- Início
+
+![alt text](/src/img/image1.png)
+
+- Passa a vez
+
+![alt text](/src/img/image2.png)
+
+- Soma dos pontos
+
+![alt text](/src/img/image3.png)
+
+- Perda da rodada por tiro
+
+![alt text](/src/img/image4.png)
+
+- Final com o vencedor
+
+![alt text](/src/img/image5.png)
+
 ---
 Feito por Juliane Bueno
